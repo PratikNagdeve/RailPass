@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-lg-6 text-light mt-5" style="margin-top:50px;line-height: 70px">
+      <p  style="font-weight: 400;font-size: 56px;margin-left: 50px;margin-top: 80px;">Experience the Fast and</p>
+      <p  style="font-weight: 400;font-size: 56px;margin-right: 65px;">Fun Commuterline</p>
+      <p  style="font-weight: 400;font-size: 56px;margin-right:220px">Wave Today</p>
+      <p style="line-height: 7px;margin-left: 20px;margin-top: 30px;">Say goodbye to traffic and parking hasseles! Join Commuterline Wave for a </p>
+      <p style="line-height: 7px;margin-left: 0px;"> Fast,reliable,and stress free commutating experience that's both fun and </p>
+      <p style="line-height: 7px;margin-right:430px"> affordable.</p>
+      <img src="../assets/images/app-store-badge-128x128 (1).png" alt="app store" style="width:150px;margin-right: 15px;">
+      <img src="../assets/images/google play 3.png" alt="app store" style="width:185px;margin-right: 155px;">
+
+
+    </div>
+    <div class="col-lg-6">
+      <div class="card" style="width: 500px;margin-left: 130px;margin-top: 150px;">
+        <h2 style="color: blue;" class="mt-1">Book Your Ticket</h2>
+        <form class="mt-1" [formGroup]="newForm" (ngSubmit)="FormValue()">
+          <div class="form-group">
+            <input type="text" formControlName="CurrentLocation" style="margin-left: 50px;" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Current Location">
+            <span class="alert alert-danger" *ngIf="Location && Location.invalid && Location.touched">Current Location is missing.</span>
+          </div>
+          <div class="form-group">
+            <input type="text" formControlName="Destination" style="margin-left: 50px;" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp"  placeholder="Destination">
+            <span class="alert alert-danger" *ngIf="destination && destination.invalid && destination.touched">Destination is Missing.</span>
+          </div>
+          <div class="input-group">
+            <input type="text" formControlName="Departure" style="margin-left: 10px;" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"  placeholder="Departure Time">
+            &nbsp;&nbsp;&nbsp;&nbsp; 
+           <input type="text" formControlName="Seats" style="margin-right: 10px;" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp"  placeholder="Seats">
+           <span class="alert alert-danger" *ngIf="departure && departure.invalid && departure.touched">Departure time is missing.</span>
+           <span class="alert alert-danger" *ngIf="seat && seat.invalid && seat.touched">Seats are missing</span>
+          </div>
+          
+          <button  [disabled]="newForm.invalid"  (click)="sendData()" type="submit" class="btn btn-primary mt-3" style="margin-bottom: 20px;">{{ShowME}}</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<style>
+  input{
+    width: 400px;
+    height:45px;
+    text-align: center;
+  }
+</style>
