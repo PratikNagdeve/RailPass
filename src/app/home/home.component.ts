@@ -1,8 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import{FormControl,FormGroup} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormValuesService } from '../Services/form-values.service';
-import { EMPTY } from 'rxjs';
 
 
 @Component({
@@ -16,8 +15,8 @@ export class HomeComponent implements OnInit {
   ShowME="Book Now"; 
 
   ngOnInit(): void {
-    this.BackToForm();
-    this.refillForm();
+   // this.BackToForm();
+   // this.refillForm();
   }
   
   newForm=new FormGroup(
@@ -59,13 +58,13 @@ export class HomeComponent implements OnInit {
       
     }
 
-    BackToForm()
+  /*  BackToForm()
     {
       this.editInfo=this.formValues.getEditInfo();
       console.log("Edit Info: ",this.editInfo);
-    }
+    } */
 
-    refillForm()
+   /* refillForm()
     {
       this.newForm.patchValue(this.editInfo);
       if(!this.editInfo)
@@ -73,6 +72,6 @@ export class HomeComponent implements OnInit {
         this.ShowME="Update"; 
       }
       
-    }
+    }*/
 
 }

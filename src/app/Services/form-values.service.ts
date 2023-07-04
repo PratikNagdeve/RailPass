@@ -22,7 +22,7 @@ export class FormValuesService {
     return this.myArray;  
   }
 
-  backToForm(info:any)
+ /* backToForm(info:any)
   {
     this.editInfo=info;
     console.log(this.editInfo);
@@ -31,6 +31,6 @@ export class FormValuesService {
   getEditInfo()
   {
     return this.editInfo;
-  }
+  }*/
   
 }
